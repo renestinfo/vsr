@@ -58,10 +58,18 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 4vw, 3.8rem);
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      font-size: clamp(2.05rem, 4.7vw, 4.3rem);
+      font-weight: 400;
+      letter-spacing: -0.008em;
+      text-transform: none;
+      font-family: "Lucida Calligraphy", "Lucida Handwriting", "Snell Roundhand", cursive;
+      font-style: normal;
+      line-height: 1.02;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "liga" 1, "dlig" 1, "kern" 1;
+      color: #f4efe0;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.13);
     }
 
     .sub {
@@ -104,30 +112,7 @@
       z-index: 2;
     }
 
-    .controls {
-      position: absolute;
-      inset: auto 0 14px 0;
-      z-index: 3;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.65);
-      background: rgba(255, 255, 255, 0.3);
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .dot.active {
-      background: var(--gold);
-      transform: scale(1.12);
-      border-color: var(--gold);
-    }
+    /* Dots removed (carousel runs automatically) */
 
     @media (max-width: 680px) {
       body {
@@ -151,7 +136,7 @@
       }
 
       h1 {
-        font-size: clamp(1.45rem, 8.5vw, 2.05rem);
+        font-size: clamp(1.35rem, 8.0vw, 1.95rem);
         line-height: 1.1;
       }
 
@@ -161,15 +146,6 @@
         letter-spacing: 0.08em;
       }
 
-      .controls {
-        inset: auto 0 10px 0;
-        gap: 12px;
-      }
-
-      .dot {
-        width: 14px;
-        height: 14px;
-      }
     }
 
     @media (max-width: 400px) {
@@ -178,7 +154,7 @@
       }
 
       h1 {
-        font-size: clamp(1.3rem, 9vw, 1.7rem);
+        font-size: clamp(1.3rem, 9.4vw, 1.85rem);
       }
 
       .sub {
@@ -197,7 +173,6 @@
 
     <section class="carousel" aria-label="Villa image carousel">
       <div class="track" id="track"></div>
-      <div class="controls" id="controls" aria-label="Carousel controls"></div>
     </section>
   </main>
 
@@ -220,7 +195,6 @@
     ];
 
     const track = document.getElementById("track");
-    const controls = document.getElementById("controls");
     let current = 0;
     let timer;
 
@@ -233,29 +207,15 @@
       slide.style.backgroundImage = `url("${src}")`;
       track.appendChild(slide);
 
-      const dot = document.createElement("button");
-      dot.type = "button";
-      dot.className = "dot";
-      dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
-      if (i === 0) {
-        dot.classList.add("active");
-      }
-      dot.addEventListener("click", () => {
-        show(i);
-        restart();
-      });
-      controls.appendChild(dot);
+      // Carousel dots removed for a cleaner luxury look
     });
 
     const slides = Array.from(document.querySelectorAll(".slide"));
-    const dots = Array.from(document.querySelectorAll(".dot"));
 
     function show(index) {
       slides[current].classList.remove("active");
-      dots[current].classList.remove("active");
       current = index;
       slides[current].classList.add("active");
-      dots[current].classList.add("active");
     }
 
     function next() {

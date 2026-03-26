@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Font Preview - The Heart of Tuscany</title>
+  <style>
+    :root {
+      --bg-dark: #0f0f12;
+      --off-white: #f4f1ea;
+      --muted: #d5cec2;
+      --card: rgba(255, 255, 255, 0.06);
+      --border: rgba(201, 168, 106, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 22px 14px;
+      min-height: 100dvh;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--off-white);
+      background: radial-gradient(circle at top, #1d1c23 0%, var(--bg-dark) 55%, #08090b 100%);
+      display: grid;
+      place-items: start center;
+    }
+
+    .wrap {
+      width: min(980px, 100%);
+      background: linear-gradient(140deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+    }
+
+    header {
+      padding: 18px 16px 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(to bottom, rgba(15, 15, 20, 0.8), rgba(15, 15, 20, 0.25));
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .hint {
+      margin: 8px 0 0;
+      font-size: 0.9rem;
+      color: rgba(245, 241, 234, 0.75);
+    }
+
+    .list {
+      padding: 10px 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 14px;
+      padding: 14px 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+    }
+
+    .sample {
+      font-size: clamp(1.25rem, 3.2vw, 2.05rem);
+      line-height: 1.06;
+      letter-spacing: -0.01em;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+      color: var(--off-white);
+      white-space: normal;
+    }
+
+    .label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      padding-left: 6px;
+    }
+
+    .font-name {
+      font-size: 0.95rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      font-weight: 500;
+    }
+
+    .font-stack {
+      font-size: 0.86rem;
+      color: rgba(245, 241, 234, 0.7);
+      word-break: break-word;
+      line-height: 1.25;
+    }
+
+    @media (max-width: 680px) {
+      body { padding: 16px 10px; }
+      .row { grid-template-columns: 1fr; }
+      .label { padding-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Font Preview: “The Heart of Tuscany”</h1>
+      <p class="hint">If a font isn't installed on your device, your browser will fall back to the next one in the stack.</p>
+    </header>
+
+    <section class="list" aria-label="Font samples">
+      <div class="row">
+        <div class="sample" style='font-family: "Snell Roundhand", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Snell Roundhand</div>
+          <div class="font-stack">"Snell Roundhand", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Apple Chancery", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Apple Chancery</div>
+          <div class="font-stack">"Apple Chancery", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Segoe Script", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Segoe Script</div>
+          <div class="font-stack">"Segoe Script", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "URW Chancery L", "Apple Chancery", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">URW Chancery L</div>
+          <div class="font-stack">"URW Chancery L", "Apple Chancery", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Lucida Handwriting", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Lucida Handwriting</div>
+          <div class="font-stack">"Lucida Handwriting", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Brush Script MT", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Brush Script MT</div>
+          <div class="font-stack">"Brush Script MT", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Palace Script MT", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Palace Script MT</div>
+          <div class="font-stack">"Palace Script MT", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Didot", "Bodoni MT", serif; font-style: italic;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Didot / Bodoni italic</div>
+          <div class="font-stack">"Didot", "Bodoni MT", serif; italic</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Baskerville", serif; font-style: italic;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Baskerville italic</div>
+          <div class="font-stack">"Baskerville", serif; italic</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Times New Roman", serif; font-style: italic;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Times New Roman italic</div>
+          <div class="font-stack">"Times New Roman", serif; italic</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Edwardian Script ITC", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Edwardian Script ITC</div>
+          <div class="font-stack">"Edwardian Script ITC", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Monotype Corsiva", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Monotype Corsiva</div>
+          <div class="font-stack">"Monotype Corsiva", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "French Script MT", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">French Script MT</div>
+          <div class="font-stack">"French Script MT", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Mistral", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Mistral</div>
+          <div class="font-stack">"Mistral", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Lucida Calligraphy", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Lucida Calligraphy</div>
+          <div class="font-stack">"Lucida Calligraphy", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Segoe Print", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Segoe Print</div>
+          <div class="font-stack">"Segoe Print", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Zapfino", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Zapfino</div>
+          <div class="font-stack">"Zapfino", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Curlz MT", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Curlz MT</div>
+          <div class="font-stack">"Curlz MT", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Kunstler Script", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Kunstler Script</div>
+          <div class="font-stack">"Kunstler Script", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Kristen ITC", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Kristen ITC</div>
+          <div class="font-stack">"Kristen ITC", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Magneto", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Magneto</div>
+          <div class="font-stack">"Magneto", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Vivaldi", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Vivaldi</div>
+          <div class="font-stack">"Vivaldi", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Bradley Hand ITC", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Bradley Hand ITC</div>
+          <div class="font-stack">"Bradley Hand ITC", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Script MT Bold", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Script MT Bold</div>
+          <div class="font-stack">"Script MT Bold", cursive</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="sample" style='font-family: "Coronet", cursive;'>The Heart of Tuscany</div>
+        <div class="label">
+          <div class="font-name">Coronet</div>
+          <div class="font-stack">"Coronet", cursive</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+
